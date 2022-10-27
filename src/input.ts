@@ -12,7 +12,7 @@ export async function getInternalType() {
     });
 
     if (result) {
-        return result;
+        return result.internalType;
     } else {
         throw {}
     }
@@ -28,7 +28,7 @@ export async function getName() {
     });
 
     if (result) {
-        return result;
+        return result.name;
     } else {
         throw {}
     }
@@ -43,7 +43,7 @@ export async function getType() {
     });
 
     if (result) {
-        return result;
+        return result.type;
     } else {
         throw {}
     }
