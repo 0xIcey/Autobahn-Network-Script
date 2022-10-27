@@ -1,0 +1,30 @@
+{
+  "name": "autobahn-network-script",
+  "version": "1.0.0",
+  "description": "This repository will contain a script for a future [Autobahn Network](https://autobahn.network) smart contract interaction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm i && tsc",
+    "start": "node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xIcey/Autobahn-Network-Script.git"
+  },
+  "keywords": [],
+  "author": "Icey <icecrafter4+autobahn@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xIcey/Autobahn-Network-Script/issues"
+  },
+  "homepage": "https://github.com/0xIcey/Autobahn-Network-Script#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "web3": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.2",
+    "@types/web3": "^1.2.2"
+  }
+}
