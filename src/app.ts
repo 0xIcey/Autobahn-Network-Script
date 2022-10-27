@@ -20,8 +20,6 @@ try {
 //Set up contract
 const carWashContract = new AutobahnNetwork.eth.Contract(ABI as any, ContractAddress)
 
-//Little handy function to help estimate gas cost in a bit
-const estimateGasCost = (): Promise<number> => carWashContract.methods.washCar().estimateGas({ from: callerWallet.address });
 
 
 async function main() {
@@ -29,7 +27,10 @@ async function main() {
     const internalType = getInternalType();
     const name = getName();
     const type = getType();
-
+    
+    //Little handy function to help estimate gas cost in a bit
+    const estimateGasCost = async (): Promise<number> => carWashContract.methods.washCar(internalType, name, type).estimateGas({ from: callerWallet.address });
+    
     try {
         //Estimating the gas cost for the Contract call
         const estimatedGasCost = await estimateGasCost();
