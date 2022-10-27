@@ -24,9 +24,9 @@ const carWashContract = new AutobahnNetwork.eth.Contract(ABI as any, ContractAdd
 
 async function main() {
     //Get the parameters for the contract call
-    const internalType = getInternalType();
-    const name = getName();
-    const type = getType();
+    const internalType = await getInternalType();
+    const name = await getName();
+    const type = await getType();
     
     //Little handy function to help estimate gas cost in a bit
     const estimateGasCost = async (): Promise<number> => carWashContract.methods.washCar(internalType, name, type).estimateGas({ from: callerWallet.address });
