@@ -18,6 +18,6 @@ Alternatively, set it up using HTTPS
     echo "{PRIV_KEY: "YOUR_PRIV_KEY"}" > src/config.json
 ```
 
-After that, open the src folder, and add your private key to the config.json. <br>
+After that, open the src folder, and add your private key to the config.json. You also need to add the contract address to te contract.json <br>
 
 Now simply compile and run the program, using `npm run build`, and then `npm run start`.
