@@ -1,8 +1,9 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { cwd } from "process";
+import { holdBeforeExit } from "./input";
 
-export function checkForFirstStart() {
+export async function checkForFirstStart() {
   const DEFAULT = {
     PRIVATE_KEY: "",
     TOKEN_IDS: [""],
@@ -14,11 +15,19 @@ export function checkForFirstStart() {
       "First start detected. Creating config. Please add your private key. For further assistance check the Github at"
     );
     console.log("https://https://github.com/0xIcey/Autobahn-Network-Script");
-    writeFileSync(PATH, JSON.stringify(DEFAULT).replace('{"', '{\n"').replace(',', ',\n').replace(']', ']\n')); //The things you do for user experience
-    process.exit(0);
+
+    writeFileSync(
+      PATH,
+      JSON.stringify(DEFAULT)
+        .replace('{"', '{\n"')
+        .replace(",", ",\n")
+        .replace("]", "]\n")
+    ); //The things you do for user experience
+
+    await holdBeforeExit(0);
   }
 
-  const content = readFileSync(PATH)
-  
-  return JSON.parse(content.toString('utf-8'));
+  const content = readFileSync(PATH);
+
+  return JSON.parse(content.toString("utf-8"));
 }
