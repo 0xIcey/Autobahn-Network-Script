@@ -3,47 +3,16 @@ import inquirer from 'inquirer';
 let prompt = inquirer.createPromptModule();
 //Get Parameters for the Contract call
 
-export async function getInternalType() {
+export async function getTokenId() {
 
     const result = await prompt({
-        message: "Input internalType: ",
+        message: "Input tokenId: ",
         type: "input",
-        name: "internalType",
+        name: "tokenId",
     });
 
     if (result) {
-        return result.internalType;
-    } else {
-        throw {}
-    }
-
-}
-
-export async function getName() {
-
-    const result = await prompt({
-        message: "Input name: ",
-        type: "input",
-        name: "name"
-    });
-
-    if (result) {
-        return result.name;
-    } else {
-        throw {}
-    }
-}
-
-export async function getType() {
-
-    const result = await prompt({
-        message: "Input type: ",
-        type: "input",
-        name: "type"
-    });
-
-    if (result) {
-        return result.type;
+        return result.tokenId;
     } else {
         throw {}
     }
