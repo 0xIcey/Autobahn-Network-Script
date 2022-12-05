@@ -47,7 +47,6 @@ if (tokensInConfig) {
 async function main() {
   try {
     await setKeyAndTokenIds();
-
     if (tokensInConfig) {
       const allTokenIds = token_ids;
 
@@ -73,10 +72,10 @@ async function washCar(tokenId: string) {
 
   try {
     //Estimating the gas cost for the Contract call
-    
+
     //Estimating gas cost currently does not work on the proxy contract. Using static value
     //const estimatedGasCost = await estimateGasCost();
-    
+
     //Using the send function because we actually trigger functionality that uses Gas and potentially alters the Contracts state
     const result = await carWashContract.methods
       .carWash(tokenId)
