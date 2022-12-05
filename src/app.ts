@@ -33,14 +33,15 @@ const carWashContract = new AutobahnNetwork.eth.Contract(
 
 //We figure out if we got tokenIds defined in the config, otherwise we ask for one.
 //If we do have one, we can safely enable node-cron
-const multipleCars = token_ids[0] ? true : false;
+const tokensInConfig = token_ids[0] ? true : false;
 
-if (multipleCars) {
+if (tokensInConfig) {
   cron.schedule("0 * * * *", main);
+  console.log('Detected token(s) written to config. Starting automated washing every day!')
 }
 
 async function main() {
-  if (multipleCars) {
+  if (tokensInConfig) {
     const allTokenIds = token_ids;
 
     for await (const tokenId of allTokenIds) {
