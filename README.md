@@ -12,3 +12,5 @@ The pre-compiled exe currently only works on Windows.
 
 If you defined one or more token id's in the config, the program will set up to automatically execute once per day, to keep your car clean for you.
 Make sure your wallets contains enough gas money.
+
+SETTING INVALID TOKENS WILL LOOSE TO LOS OF GAS COST!!
