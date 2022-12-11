@@ -19,7 +19,6 @@ async function setKeyAndTokenIds() {
     const config = await checkForFirstStart();
     priv_key = config.PRIVATE_KEY;
     token_ids = config.TOKEN_IDS;
-    console.log(token_ids);
     callerWallet = AutobahnNetwork.eth.accounts.wallet.add(priv_key);
     console.log("Connected to wallet", callerWallet.address);
   } catch (error) {
