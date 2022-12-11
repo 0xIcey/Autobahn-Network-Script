@@ -78,12 +78,12 @@ async function washCar(tokenId: string) {
     //Estimating the gas cost for the Contract call
 
     //Estimating gas cost currently does not work on the proxy contract. Using static value
-    //const estimatedGasCost = await estimateGasCost();
+    const estimatedGasCost = await estimateGasCost();
 
     //Using the send function because we actually trigger functionality that uses Gas and potentially alters the Contracts state
     const result = await carWashContract.methods
       .carWash(tokenId)
-      .send({ from: callerWallet.address, gas: 25000 });
+      .send({ from: callerWallet.address, estimatedGasCost });
     //Should this step be successful, we can output a success message to our user
     console.log(
       `Car with tokenId ${tokenId} has been successfully washed! How shiny!`
