@@ -8,7 +8,7 @@ export async function checkForFirstStart() {
     PRIVATE_KEY: "",
     TOKEN_IDS: [""],
   };
-  const PATH = join(__dirname + "/config.json");
+  const PATH = join(cwd() + "/config.json");
 
   if (!existsSync(PATH)) {
     console.log(
